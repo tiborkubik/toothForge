@@ -18,6 +18,33 @@
 ## Abstract
 We introduce ToothForge, a spectral approach for automatically generating novel 3D teeth, effectively addressing the sparsity of dental shape datasets. By operating in the spectral domain, our method enables compact machine learning modeling, allowing the generation of high-resolution tooth meshes in milliseconds. However, generating shape spectra comes with the instability of the decomposed harmonics. To address this, we propose modeling the latent manifold on synchronized frequential embeddings. Spectra of all data samples are aligned to a common basis prior to the training procedure, effectively eliminating biases introduced by the decomposition instability. Furthermore, synchronized modeling removes the limiting factor imposed by previous methods, which require all shapes to share a common fixed connectivity. Using a private dataset of real dental crowns, we observe a greater reconstruction quality of the synthetized shapes, exceeding those of models trained on unaligned embeddings. We also explore additional applications of spectral analysis in digital dentistry, such as shape compression and interpolation. ToothForge facilitates a range of approaches at the intersection of spectral analysis and machine learning, with fewer restrictions on mesh structure. This makes it applicable for shape analysis not only in dentistry, but also in broader medical applications, where guaranteeing consistent connectivity across shapes from various clinics is unrealistic.
 
+## Requirements
+The code was tested on
+
+* Ubuntu 24.04
+* Python 3.12
+* PyTorch 2.7.0
+* 1 NVIDIA GPU with CUDA version 11.8 (the method is not memory heavy, at least when using 256 embeddings, so any gpu with at least 8GB will work).
+
+### Setup an environment
+```shell
+conda create -n toothForge python==3.12
+conda activate toothForge
+```
+### Install PyTorch
+```shell
+pip install todo
+```
+
+### Other Dependencies
+```shell
+pip install -r requirements.txt
+```
+<mark>Note:</mark> to avoid dependency conflicts, please make sure to use the exact package versions specified in `requirements.txt`. 
+
+## Data Preparation and Training
+todo: describe how to generate synchronized embeddings and run training loop
+
 ## 🔗 BibTeX
 ```bibtex
 @misc{kubik25toothforge,
