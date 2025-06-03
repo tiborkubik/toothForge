@@ -36,7 +36,7 @@ conda activate toothForge
 ```
 ### Install PyTorch
 ```shell
-pip install todo
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ### Other Dependencies
