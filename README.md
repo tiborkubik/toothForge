@@ -1,7 +1,5 @@
 # 🦷 ToothForge: Automatic Dental Shape Generation using Synchronized Spectral Embeddings
 
----
-
 <div align="center">
   <a href="https://arxiv.org/abs/2504.11418"><img src="https://img.shields.io/badge/ArXiv-2504.11418-red"></a> &ensp;
 </div>
