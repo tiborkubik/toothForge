@@ -8,7 +8,10 @@
   
 [Tibor Kubik](https://scholar.google.com/citations?user=Zb6MSKcAAAAJ), [Francois Guibault](https://scholar.google.com/citations?user=KF8zbPUAAAAJ&hl=sk&oi=ao), [Michal Spanel](https://scholar.google.com/citations?hl=sk&user=75XIbgQAAAAJ) and [Herve Lombaert](https://scholar.google.com/citations?hl=sk&user=KQbyRzIAAAAJ)
 
+![Diagram](assets/method-outline.png)
+
 </div>
+
 
 ## 🔥 News and Todo
 * 💻 June 2025: Preparation of this GitHub repository.
