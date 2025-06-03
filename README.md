@@ -46,6 +46,8 @@ pip install -r requirements.txt
 todo: describe how to generate synchronized embeddings and run training loop
 
 ## 🔗 BibTeX
+If you find this work useful for your research and applications, please cite using this BibTeX:
+
 ```bibtex
 @misc{kubik25toothforge,
       title={ToothForge: Automatic Dental Shape Generation using Synchronized Spectral Embeddings}, 
