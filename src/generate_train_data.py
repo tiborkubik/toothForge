@@ -10,8 +10,8 @@ _K_LIMIT: int = 512
 
 _RUN_PREALIGNMENT: bool = True
 
-_DEFAULT_RAW_DATASET_PATH: str = '../data/raw/'
-_DEFAULT_OUT_DATASET_PATH: str = '../data/generated/'
+_DEFAULT_MESH_DATASET_PATH: str = '../data/meshes/'
+_DEFAULT_SPEC_DATASET_PATH: str = '../data/generated/'
 
 _PERMUTATIONS = [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
 _FLIPS = [[1, 1, 1], [-1, 1, 1], [1, -1, 1], [1, 1, -1],
@@ -20,9 +20,9 @@ _FLIPS = [[1, 1, 1], [-1, 1, 1], [1, -1, 1], [1, 1, -1],
 
 def parse_args() -> argparse.Namespace:
     args = argparse.ArgumentParser()
-    args.add_argument('--folder-path-in', type=str, default=_DEFAULT_RAW_DATASET_PATH,
-                      help='Path to dataset folder. This folder contains files in .stl format.')
-    args.add_argument('--folder-path-out', type=str, default=_DEFAULT_OUT_DATASET_PATH,
+    args.add_argument('--folder-path-in', type=str, default=_DEFAULT_MESH_DATASET_PATH,
+                      help='Path to dataset folder. This folder contains files in .stl/.obj format.')
+    args.add_argument('--folder-path-out', type=str, default=_DEFAULT_SPEC_DATASET_PATH,
                       help='Path to the folder where outputs should be generated.')
 
     args.add_argument('--k', type=str, default=_K_LIMIT,
@@ -131,7 +131,7 @@ def main() -> None:
 
     os.makedirs(args.folder_path_out, exist_ok=True)  # Create empty output folder if it does not exist yet.
 
-    mesh_ps = [f for f in os.listdir(args.folder_path_in) if f.endswith('.obj')]  # All meshes in the dataset.
+    mesh_ps = [f for f in os.listdir(args.folder_path_in) if f.endswith('.obj') or f.endswith('.stl')]
 
     ''' Processing template mesh. '''
     mesh_template_p = mesh_ps[0]  # First mesh will be set as the template.

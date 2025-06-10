@@ -46,10 +46,38 @@ pip install -r requirements.txt
 Note: to avoid dependency conflicts, please make sure to use the exact package versions specified in `requirements.txt`. 
 
 ## Applying Spectral Decomposition
-todo: add information about the first step: how to get the embeddings of the shapes.
+To apply spectral decomposition, create an instance of `SpectralMesh`. This requires
+either path to the shape file or a `trimesh` object. The shape can be in any format supported by `trimesh`, such as `.obj`, `.stl`, or `.ply`. 
+The `k` parameter specifies the number of shape-specific spectral embeddings to generate, which can be adjusted based on the desired resolution and detail of the shape.
+Note that the number of embeddings must be less than the number of vertices in the mesh and that bigger the number, the slower the decomposition will be.
 
-## Data Preparation and Training
-todo: describe how to generate synchronized embeddings and run training loop
+```python
+mesh = SpectralMesh('data/cow.obj', k=256)
+```
+Once the instance is created, you can access the mesh geometry, encapsulated trimesh instance, and the
+eigen values and eigen modes (`mesh.graph.eig_vals` and `mesh.graph.eig_vecs`).
+
+You can use various member methods, for example to visualize the spectral embeddings:
+
+```python
+   mesh.visualize_shape_eigenmodes([1, 2, 3, 4, 50, 100, 110])
+```
+
+This will plot a window using `pyvista` with 7 sub-windows, each showing the shape colored by the specified eigenmode.
+Note that any list of integers can be passed, if the values are valid.
+
+![Diagram](assets/eigenmode-visualisation.png)
+
+There is also a method for mesh compression. Simply call `mesh.low_pass_filter(k=40)` to compress
+the mesh using leading 40 eigenmodes (change the number to adjust the compression level: the lower, the less high-frequency details).
+
+![Diagram](assets/mesh-compression.png)
+
+## Data Preparation for Training (with Embedding Synchronization)
+todo: describe how to generate data: synchronized embeddings
+
+## Running training
+todo: describe how to run training loop
 
 ## 🔗 BibTeX
 If you find this work useful for your research and applications, please cite using this BibTeX:
