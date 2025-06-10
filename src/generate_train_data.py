@@ -4,7 +4,8 @@ import argparse
 import numpy as np
 from copy import deepcopy
 
-from SpectralMesh import SpectralMesh, find_rotation_closed_form_iterative
+from src.SpectralMesh import SpectralMesh
+from src.utils import find_rotation_closed_form_iterative
 
 _K_LIMIT: int = 512
 

@@ -74,7 +74,19 @@ the mesh using leading 40 eigenmodes (change the number to adjust the compressio
 ![Diagram](assets/mesh-compression.png)
 
 ## Data Preparation for Training (with Embedding Synchronization)
-todo: describe how to generate data: synchronized embeddings
+There is a dedicated script for generating synchronized embeddings from a set of meshes: `python generate_train_data.py --folder-path-in --folder-path-out`.
+It requires a path to input folder with meshes and a path to output folder where the data for training will be saved.
+The script will read all meshes from the input folder, perform spectral decomposition, and save the synchronized embeddings in the output folder.
+The synchronization is done towards the first mesh in the input folder, referred to as template.
+Once finished, each shape is now represented with its folder in the output folder, containing the following files:
+* `spatial.h5`: information about vertices and edges
+* `spec_coeff.h5`: original spectral coefficients (vertices projected through non-synchronized basis)
+* `spec_rotation.h5`: rotation matrix used for synchronization
+* `spectrum.h5`: original eigenvalues and eigenvectors
+
+These files are necessary for training the model.
+For convenience and double-check that the process is correct, the script also saves several `stl` files, of original mesh, spectral reconstructions applied through
+template basis with and without synchronization, etc.
 
 ## Running training
 todo: describe how to run training loop
