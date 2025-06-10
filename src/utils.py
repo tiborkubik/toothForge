@@ -266,7 +266,7 @@ def custom_collate_fn(batch, apply_noise):
 def custom_collate_fn_augmented_batch(batch, batch_size):
     sample = batch[0]
 
-    sample['c'] = sample['R'] @ sample['c']
+    sample['c'] = sample['R'] @ sample['c']  # Apply synchronization on-the-fly
 
     if torch.cuda.is_available():
         device = 'cuda'

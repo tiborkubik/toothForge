@@ -89,7 +89,7 @@ For convenience and double-check that the process is correct, the script also sa
 template basis with and without synchronization, etc.
 Note that for training, additional `split.txt` file should be created, compatible with the training pipeline.
 
-## Running training
+## Running Training
 To train an autoencoder, use the script `train.py`. Internally, the script uses `hydra` and `omegaconf` packages
 to manage the configuration. Configuration files are located in `configuration/`, 
 and it can be modified to adjust the training parameters and specify paths to data.
