@@ -1,7 +1,7 @@
 # 🦷 ToothForge: Automatic Dental Shape Generation using Synchronized Spectral Embeddings
 
 <div align="center">
-  <a href="https://arxiv.org/abs/2504.11418"><img src="https://img.shields.io/badge/ArXiv-2504.11418-red"></a> &ensp;
+  <a href="https://arxiv.org/abs/2506.02702"><img src="https://img.shields.io/badge/ArXiv-2506.02702-red"></a> &ensp;
 </div>
 
 <div align="center">
@@ -59,9 +59,9 @@ If you find this work useful for your research and applications, please cite usi
       title={ToothForge: Automatic Dental Shape Generation using Synchronized Spectral Embeddings}, 
       author={Tibor Kubik and Francois Guibault and Michal Spanel and Herve Lombaert},
       year={2025},
-      eprint={2504.11418},
+      eprint={2506.02702},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={[https://arxiv.org/pdf/2505.20156](https://arxiv.org/abs/2504.11418)}, 
+      url={https://arxiv.org/abs/2506.02702}, 
 }
 ```
