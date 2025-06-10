@@ -34,7 +34,7 @@ The code was tested on
 conda create -n toothForge python==3.12
 conda activate toothForge
 ```
-### Install PyTorch
+### Install PyTorch (optional: if you plan to train a model, not just apply decomposition/alignment)
 ```shell
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
@@ -43,7 +43,10 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 ```shell
 pip install -r requirements.txt
 ```
-<mark>Note:</mark> to avoid dependency conflicts, please make sure to use the exact package versions specified in `requirements.txt`. 
+Note: to avoid dependency conflicts, please make sure to use the exact package versions specified in `requirements.txt`. 
+
+## Applying Spectral Decomposition
+todo: add information about the first step: how to get the embeddings of the shapes.
 
 ## Data Preparation and Training
 todo: describe how to generate synchronized embeddings and run training loop
