@@ -87,9 +87,12 @@ Once finished, each shape is now represented with its folder in the output folde
 These files are necessary for training the model.
 For convenience and double-check that the process is correct, the script also saves several `stl` files, of original mesh, spectral reconstructions applied through
 template basis with and without synchronization, etc.
+Note that for training, additional `split.txt` file should be created, compatible with the training pipeline.
 
 ## Running training
-todo: describe how to run training loop
+To train an autoencoder, use the script `train.py`. Internally, the script uses `hydra` and `omegaconf` packages
+to manage the configuration. Configuration files are located in `configuration/`, 
+and it can be modified to adjust the training parameters and specify paths to data.
 
 ## 🔗 BibTeX
 If you find this work useful for your research and applications, please cite using this BibTeX:

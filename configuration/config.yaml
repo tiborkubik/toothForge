@@ -1,0 +1,3 @@
+defaults:
+    - paths: paths.yaml
+    - training: training.yaml

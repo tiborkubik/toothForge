@@ -1,0 +1,24 @@
+lr: 0.0001
+
+batch_size: 16
+
+device: 'cpu'
+
+max_steps: 100000
+
+fast_dev_run: null
+
+precision: 16-mixed
+
+early_stop_patience: 30
+
+model_type: 'VAE'
+
+denoising_training: True
+
+k: 128
+size_latent: 16
+initial_feature_size: 8
+depth: 4
+activation_func: 'ELU'
+kl_weight: 0.05

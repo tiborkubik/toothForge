@@ -1,0 +1,5 @@
+dataset: 'data/generated/'
+
+checkpoint: 'weights/best-checkpoint.ckpt'
+
+split: 'data/generated/split.txt'
